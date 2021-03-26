@@ -14,7 +14,11 @@ class ManagementUserController extends Controller
      */
     public function index()
     {
-        return "Method ini nantinya akan digunakan untuk menampilkan form untuk menambah data user";
+        //return "Method ini nantinya akan digunakan untuk menampilkan form untuk menambah data user";
+        $nama = "Arvita Agus Kurniasari";
+        $pelajaran = ["Algoritma & Pemograman","kalkulus","Pemograman Web"];
+
+        return view('home', compact('nama','pelajaran'));
 
     }
 
@@ -25,7 +29,7 @@ class ManagementUserController extends Controller
      */
     public function create()
     {
-        return "Method ini nantinya akan digunakan untuk mengambil semua data user";
+        //return "Method ini nantinya akan digunakan untuk mengambil semua data user";
 
     }
 
@@ -37,7 +41,7 @@ class ManagementUserController extends Controller
      */
     public function store(Request $request)
     {
-        return "Method ini nantinya akan digunakan untuk menciptakan data user yang baru";
+        //return "Method ini nantinya akan digunakan untuk menciptakan data user yang baru";
 
     }
 
@@ -49,7 +53,7 @@ class ManagementUserController extends Controller
      */
     public function show(ManagementUser $managementUser)
     {
-        return "Method ini nantinya akan digunakan untuk mengambil satu data user dengan id=" .$id;
+        //return "Method ini nantinya akan digunakan untuk mengambil satu data user dengan id=" .$id;
 
     }
 
@@ -61,7 +65,7 @@ class ManagementUserController extends Controller
      */
     public function edit( $id)
     {
-        return "Method ini nantinya akan digunakan untuk menampilkan form untuk mengubah data edit dengan id=" .$id;
+        //return "Method ini nantinya akan digunakan untuk menampilkan form untuk mengubah data edit dengan id=" .$id;
 
     }
 
@@ -74,7 +78,8 @@ class ManagementUserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return "Method ini nantinya akan digunakan untuk mengubah form untuk mengubah data user dengan id=" .$id;
+        //return "Method ini nantinya akan digunakan untuk mengubah form untuk mengubah data user dengan id=" .$id;
+       
     }
 
     /**
@@ -85,6 +90,6 @@ class ManagementUserController extends Controller
      */
     public function destroy($id)
     {
-        return "Method ini nantinya akan digunakan untuk menghapus form data user dengan id=" .$id;
+        //return "Method ini nantinya akan digunakan untuk menghapus form data user dengan id=" .$id;
     }
 }
