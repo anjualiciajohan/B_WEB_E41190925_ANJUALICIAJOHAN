@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-
+use App\Http\Middleware\TerminableMiddleware;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -13,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton(TerminableMiddleware::class);
     }
 
     /**
@@ -25,4 +25,5 @@ class AppServiceProvider extends ServiceProvider
     {
         //
     }
+ 
 }
