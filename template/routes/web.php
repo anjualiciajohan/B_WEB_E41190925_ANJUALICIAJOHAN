@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\CheckAge;
+use App\Http\Controllers\backend\PengalamanKerjaController;
+
 
 
 /*
@@ -15,17 +17,29 @@ use App\Http\Middleware\CheckAge;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::group(['namespace' => 'App\Http\Controllers\Frontend'], function()
+Route::group(['namespace' => 'Frontend'], function()
 {
     Route::resource('home', 'HomeController');
 });
-Route::group(['namespace' => 'App\Http\Controllers\Backend'], function()
+Route::group(['namespace' => 'backend'], function()
 {
     Route::resource('dashboard', 'DashboardController');
+});
+
+Route::group(['namespace' => 'Backend'], function()
+{
+    Route::resource('dashboard','DashboardController');
+}
+);
+
+Route::group(['namespace' => 'Backend'], function(){
+    Route::resource('dashboard', 'DashboardController');
+    Route::resource('pendidikan', 'PendidikanController');
+    Route::resource('pengalaman_kerja', 'PengalamanKerjaController');
 });
 
 Auth::routes();
@@ -61,8 +75,4 @@ Route ::put('post/{id}', function($id){
 })->middleware('role:editor');
 
 
-Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('statusAdmin');
-Route::get('/error', function(){
-    return view ('error');
-})->name('error');
+
